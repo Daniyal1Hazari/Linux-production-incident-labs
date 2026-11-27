@@ -1,0 +1,45 @@
+====================================================
+INCIDENT INC-001 - NGINX RECOVERY EVIDENCE
+====================================================
+
+INCIDENT:
+Unknown Nginx Directive
+
+FAULT INJECTED:
+invalid_nginx_directive on;
+
+CONFIGURATION VALIDATION:
+Command:
+nginx -t
+
+DETECTED ERROR:
+unknown directive "invalid_nginx_directive"
+
+SERVICE IMPACT:
+Nginx failed to start with the invalid configuration.
+The website became unavailable during the incident.
+
+REMEDIATION:
+1. Inspected the Nginx configuration.
+2. Identified the unsupported directive.
+3. Removed the faulty configuration line.
+4. Validated the corrected configuration.
+5. Started the Nginx service.
+
+RECOVERY VALIDATION:
+Nginx Configuration Test: PASSED
+Nginx Service Status: ACTIVE
+Nginx Boot Status: ENABLED
+Port 80: LISTENING
+HTTP Response: 200 OK
+Website Content: VERIFIED
+
+FINAL RESULT:
+SUCCESSFUL RECOVERY
+
+The invalid directive was removed and Nginx was
+successfully restored. The website returned HTTP 200.
+
+====================================================
+END OF INCIDENT RECOVERY EVIDENCE
+====================================================
