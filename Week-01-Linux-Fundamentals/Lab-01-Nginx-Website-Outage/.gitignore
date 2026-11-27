@@ -1,0 +1,57 @@
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials/
+
+# SSH keys
+id_rsa
+id_ed25519
+.ssh/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary and backup files
+*.tmp
+*.temp
+*.bak
+*.old
+*.orig
+*.log
+
+# Runtime files
+*.pid
+*.sock
+
+# Python cache (if used later)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node.js (if used later)
+node_modules/
+
+# Terraform state (if used later)
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# Local environment files
+.local/
+.cache/
