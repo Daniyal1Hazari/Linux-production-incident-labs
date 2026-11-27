@@ -1,0 +1,35 @@
+====================================================
+INCIDENT INC-002 - RECOVERY EVIDENCE
+====================================================
+
+INCIDENT:
+Invalid Nginx Root Directive Arguments
+
+REMEDIATION:
+1. Inspected the Nginx site configuration.
+2. Identified the extra argument in the root directive.
+3. Removed the faulty configuration line.
+4. Executed nginx -t to validate the configuration.
+5. Reloaded Nginx after successful validation.
+
+CORRECTED CONFIGURATION:
+root /var/www/devops-incident-lab;
+
+RECOVERY VALIDATION:
+Nginx Configuration Test: PASSED
+Nginx Service Status: ACTIVE
+Nginx Reload: SUCCESSFUL
+HTTP Response: 200 OK
+Website Content: VERIFIED
+
+SERVICE IMPACT:
+The existing Nginx process remained active during
+detection and recovery. The previously loaded valid
+configuration continued serving the website.
+
+FINAL RESULT:
+SUCCESSFUL RECOVERY
+
+====================================================
+END OF INCIDENT RECOVERY EVIDENCE
+====================================================
