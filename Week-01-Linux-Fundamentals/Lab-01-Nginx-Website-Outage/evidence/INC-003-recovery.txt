@@ -1,0 +1,37 @@
+====================================================
+INCIDENT INC-003 - RECOVERY EVIDENCE
+====================================================
+
+INCIDENT:
+Nginx Directive in the Wrong Configuration Context
+
+REMEDIATION:
+1. Inspected the Nginx site configuration.
+2. Identified the misplaced worker_processes directive.
+3. Removed the directive from the server block.
+4. Executed nginx -t to validate the configuration.
+5. Reloaded Nginx after successful validation.
+
+CORRECT CONFIGURATION:
+The worker_processes directive was removed from
+the server-level configuration.
+
+RECOVERY VALIDATION:
+Nginx Configuration Test: PASSED
+Nginx Service Status: ACTIVE
+Nginx Reload: SUCCESSFUL
+Port 80: LISTENING
+HTTP Response: 200 OK
+Website Content: VERIFIED
+
+SERVICE IMPACT:
+The existing Nginx process remained active throughout
+detection and recovery. The previously loaded valid
+configuration continued serving the website.
+
+FINAL RESULT:
+SUCCESSFUL RECOVERY
+
+====================================================
+END OF INCIDENT RECOVERY EVIDENCE
+====================================================
