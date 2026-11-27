@@ -1,0 +1,38 @@
+====================================================
+INCIDENT INC-002 - DETECTION EVIDENCE
+====================================================
+
+INCIDENT:
+Invalid Nginx Root Directive Arguments
+
+FAULT INJECTED:
+root /var/www/devops-incident-lab /wrong-path;
+
+VALIDATION COMMAND:
+nginx -t
+
+DETECTED ERROR:
+invalid number of arguments in "root" directive
+
+SERVICE STATUS:
+Nginx remained ACTIVE.
+
+HTTP STATUS:
+200 OK
+
+OBSERVATION:
+The running Nginx process continued serving requests
+using its previously loaded configuration. The invalid
+configuration had not been successfully reloaded.
+
+ROOT CAUSE:
+The root directive contained an extra argument.
+The Nginx root directive accepts a single directory
+path as its argument.
+
+DETECTION RESULT:
+FAILED CONFIGURATION VALIDATION
+
+====================================================
+END OF INCIDENT DETECTION EVIDENCE
+====================================================
