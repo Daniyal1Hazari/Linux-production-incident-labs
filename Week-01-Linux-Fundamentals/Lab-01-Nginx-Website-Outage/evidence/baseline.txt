@@ -1,0 +1,78 @@
+====================================================
+DEVOPS INCIDENT RESPONSE LAB
+BASELINE INFRASTRUCTURE EVIDENCE
+====================================================
+
+PROJECT
+-------
+Project Name: DevOps Incident Response Lab
+Cloud Provider: Amazon Web Services (AWS)
+Region: ap-south-1 (Mumbai)
+Instance Type: t3.micro
+Operating System: Ubuntu 26.04.1 LTS
+Web Server: Nginx 1.28.3
+
+INFRASTRUCTURE
+--------------
+Compute: AWS EC2
+Web Server: Nginx
+Web Root: /var/www/devops-incident-lab
+Nginx Configuration:
+  /etc/nginx/sites-available/devops-incident-lab
+
+Enabled Site:
+  /etc/nginx/sites-enabled/devops-incident-lab
+
+Access Log:
+  /var/log/nginx/devops-incident-access.log
+
+Error Log:
+  /var/log/nginx/devops-incident-error.log
+
+NETWORK
+-------
+HTTP Port: 80
+SSH Port: 22
+HTTP Security Group Rule: 0.0.0.0/0
+SSH Security Group Rule: My IP
+
+BASELINE SERVICE VALIDATION
+---------------------------
+Nginx Configuration Test: PASSED
+Nginx Service Status: ACTIVE
+Nginx Boot Status: ENABLED
+Port 80: LISTENING
+Local HTTP Response: 200 OK
+Website Content: VERIFIED
+
+WEBSITE
+-------
+Page Heading:
+Welcome to My DevOps Project!
+
+Website Status:
+Website Operational
+
+Access URL:
+http://<EC2_PUBLIC_IP>/
+
+INCIDENT RESPONSE CAPABILITIES
+------------------------------
+1. Unknown Nginx directive detection and recovery
+2. Invalid root directive argument detection and recovery
+3. Incorrect directive context detection and recovery
+
+BACKUP
+------
+Known-good configuration:
+backup/nginx-working-config.conf
+
+BASELINE RESULT
+---------------
+Nginx was verified operational before incident simulations.
+The website returned HTTP 200 and the expected page content
+was available.
+
+====================================================
+END OF BASELINE EVIDENCE
+====================================================
