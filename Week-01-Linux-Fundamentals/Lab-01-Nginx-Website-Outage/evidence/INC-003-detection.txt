@@ -1,0 +1,40 @@
+====================================================
+INCIDENT INC-003 - DETECTION EVIDENCE
+====================================================
+
+INCIDENT:
+Nginx Directive in the Wrong Configuration Context
+
+FAULT INJECTED:
+worker_processes 2;
+
+LOCATION:
+Inside the Nginx server block.
+
+VALIDATION COMMAND:
+nginx -t
+
+DETECTED ERROR:
+"worker_processes" directive is not allowed here
+
+SERVICE STATUS:
+Nginx remained ACTIVE.
+
+HTTP STATUS:
+200 OK
+
+OBSERVATION:
+The existing Nginx process continued serving requests
+using its previously loaded configuration. The invalid
+configuration was not successfully reloaded.
+
+ROOT CAUSE:
+The worker_processes directive is a main-context
+directive and cannot be placed inside a server block.
+
+DETECTION RESULT:
+FAILED CONFIGURATION VALIDATION
+
+====================================================
+END OF INCIDENT DETECTION EVIDENCE
+====================================================
